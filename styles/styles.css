@@ -3,12 +3,21 @@
   --btn-color: #0079ff;
   --background-color: #141d2f;
   --folllower-cont-color: #1e2a47;
-}
-:root {
+  --h2-color: #222731;
+  --darkLightMode: #697c9a;
   --pharagraf-color: #4b6a9b;
   --profileInfo-color: #2b3442;
   --joinDate-color: #697c9a;
-  --followerContainer: #f6f8ff;
+  --backgroundColor: #f6f8ff;
+}
+
+body.dark {
+  --basic-color: #ffffff;
+  --btn-color: #0079ff;
+  --background-color: #141d2f;
+  --folllower-cont-color: #1e2a47;
+  --h2-color: #222731;
+  --darkLightMode: #697c9a;
 }
 @font-face {
   font-family: "SpaceMono";
@@ -17,14 +26,37 @@
 
 body {
   font-family: "SpaceMono";
-  background-color: var(--followerContainer);
+  background-color: var(--backgroundColor);
 }
 .searchGitub {
   max-width: 730px;
   width: 100%;
   height: 480px;
   margin: 0 auto;
-  background-color: var(--followerContainer);
+  background-color: var(--backgroundColor);
+}
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.headerContainer h1 {
+  font-size: 26px;
+  color: var(--h2-color);
+}
+.headerContainer h4 {
+  color: var(--darkLightMode);
+  cursor: pointer;
+}
+
+.colormode {
+  display: flex;
+  gap: 16px;
+}
+.colormode img {
+  cursor: pointer;
 }
 .searchWrapper {
   width: 730px;
@@ -120,7 +152,7 @@ body {
   width: 480px;
   gap: 82px;
   justify-content: center;
-  background-color: var(--followerContainer);
+  background-color: var(--backgroundColor);
   border-radius: 10px;
 }
 .followerCountContainer .counts {
