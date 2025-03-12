@@ -163,3 +163,31 @@ body {
   cursor: pointer;
   font-size: 11px;
 }
+@media (max-width: 900px) {
+  .searchWrapper {
+    width: 493px;
+  }
+  .searchGitub input {
+    width: 493px;
+  }
+  #search {
+    right: -70px;
+  }
+  .profileContainer {
+    width: 573px;
+    height: 481px;
+  }
+  .nameAndJoin {
+    width: 480px;
+    display: block;
+    justify-content: space-between;
+    margin: 44px 0px 0px 37px;
+  }
+  .footerContainer {
+    margin-left: 40px;
+  }
+  .usefullLinks {
+    gap: 200px;
+    margin-top: 37px;
+  }
+}
