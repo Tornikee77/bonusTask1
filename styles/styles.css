@@ -3,21 +3,19 @@
   --btn-color: #0079ff;
   --background-color: #141d2f;
   --folllower-cont-color: #1e2a47;
-  --h2-color: #222731;
-  --darkLightMode: #697c9a;
-  --pharagraf-color: #4b6a9b;
   --profileInfo-color: #2b3442;
-  --joinDate-color: #697c9a;
-  --backgroundColor: #f6f8ff;
+  --username-and-join: #697c9a;
+  --body-color: #f6f8ff;
 }
 
 body.dark {
-  --basic-color: #ffffff;
-  --btn-color: #0079ff;
-  --background-color: #141d2f;
-  --folllower-cont-color: #1e2a47;
-  --h2-color: #222731;
-  --darkLightMode: #697c9a;
+  --basic-color: #1e2a47;
+  --backgroundColor: #141d2f;
+  --h2-color: #ffffff;
+  --body-color: #141d2f;
+  --username-and-join: #ffffff;
+  --profileInfo-color: #ffffff;
+  --folllower-cont-color: #ffffff;
 }
 @font-face {
   font-family: "SpaceMono";
@@ -26,8 +24,9 @@ body.dark {
 
 body {
   font-family: "SpaceMono";
-  background-color: var(--backgroundColor);
+  background-color: var(--body-color);
 }
+
 .searchGitub {
   max-width: 730px;
   width: 100%;
@@ -52,6 +51,14 @@ body {
 }
 
 .colormode {
+  display: flex;
+  gap: 16px;
+}
+.headerContainer .colormode #darkMode {
+  display: flex;
+  all: unset;
+}
+.btnContainer {
   display: flex;
   gap: 16px;
 }
@@ -142,6 +149,12 @@ body {
   height: 25px;
   margin-left: 37px;
 }
+.bioContainer p {
+  width: 480px;
+  height: 25px;
+  margin-left: 37px;
+  color: var(--username-and-join);
+}
 .footerContainer {
   flex-direction: column;
   width: 480px;
@@ -152,19 +165,23 @@ body {
   width: 480px;
   gap: 82px;
   justify-content: center;
-  background-color: var(--backgroundColor);
+  background-color: var(--body-color);
   border-radius: 10px;
+}
+.followerCountContainer {
+  color: var(--username-and-join);
 }
 .followerCountContainer .counts {
   display: flex;
   justify-content: center;
+  color: var(--username-and-join);
 }
 .footerContainer .location,
 .github {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--pharagraf-color);
+  color: var(--username-and-join);
   font-size: 11px;
 }
 .usefullLinks {
@@ -181,7 +198,7 @@ body {
 .githubLink {
   margin-top: 19px;
   text-decoration: none;
-  color: var(--pharagraf-color);
+  color: var(--username-and-join);
 }
 .socMedia {
   display: flex;
@@ -191,11 +208,14 @@ body {
 .githubWebsite {
   display: flex;
   gap: 12px;
-  color: var(--pharagraf-color);
+  color: var(--username-and-join);
   cursor: pointer;
   font-size: 11px;
 }
 @media (max-width: 900px) {
+  .headerContainer {
+    width: 573px;
+  }
   .searchWrapper {
     width: 493px;
   }
@@ -214,6 +234,9 @@ body {
     display: block;
     justify-content: space-between;
     margin: 44px 0px 0px 37px;
+  }
+  .bioContainer {
+    margin-left: 0px;
   }
   .footerContainer {
     margin-left: 40px;

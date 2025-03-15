@@ -2,6 +2,30 @@ const githubUser = document.querySelector(".gitHubUser");
 const input = document.getElementById("userName");
 const searchBtn = document.getElementById("search");
 const profileContainer = document.querySelector(".profileContainer");
+const teamToggle = document.getElementById("darkMode");
+
+function updateSavedText(theme) {
+  if (theme === "dark") {
+    teamToggle.innerHTML = ` <img src="assets/svg/lightMode.svg" alt="">`;
+  } else {
+    teamToggle.innerHTML = ` <img src="assets/svg/darkMode (2).svg" alt="" />`;
+  }
+}
+
+function appleSavedTheme() {
+  const currentTheme = localStorage.getItem("theme") || "light";
+
+  document.body.classList.toggle("dark", currentTheme === "dark");
+
+  updateSavedText(currentTheme);
+}
+
+teamToggle.addEventListener("click", function () {
+  const isDarkmode = document.body.classList.toggle("dark");
+
+  localStorage.setItem("theme", isDarkmode ? "dark" : "light");
+  updateSavedText(isDarkmode ? "dark" : "light");
+});
 
 searchBtn.addEventListener("click", () => {
   const username = input.value.trim();
